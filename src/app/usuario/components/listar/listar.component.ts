@@ -1,5 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Usuario} from '../../model/usuario';
+import {UsuarioService} from '../../service/usuario.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-listar',
@@ -9,20 +11,29 @@ import {Usuario} from '../../model/usuario';
 export class ListarComponent implements OnInit {
 
   public usuarios: Usuario[];
-  colunas: string[] = ['login', 'password'];
+  colunas: string[] = ['login', 'password', 'acoes'];
 
-  constructor() {
+  constructor(private usuarioService: UsuarioService, private router: Router) {
   }
 
   ngOnInit() {
+    this.listar();
+  }
+
+  listar(): void {
+    this.usuarioService.listar()
+      .subscribe(usuarios => {
+        this.usuarios = usuarios;
+      });
   }
 
   editar({id}: Usuario): void {
-    console.log(id);
+    this.router.navigate(['editar', id]);
   }
 
   remover({id}: Usuario): void {
-    console.log(id);
+    this.usuarioService.remover(id).subscribe(() => this.listar());
   }
+
 
 }

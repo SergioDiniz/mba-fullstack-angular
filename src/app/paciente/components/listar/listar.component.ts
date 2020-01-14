@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Paciente} from "../../model/paciente";
+import { PacienteService } from "../../service/paciente.service";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -9,20 +11,28 @@ import {Paciente} from "../../model/paciente";
 })
 export class ListarComponent implements OnInit {
   public pacientes: Paciente[];
-  colunas: string[] = ['nome', 'telefone', 'email'];
+  colunas: string[] = ['nome', 'telefone', 'email', 'acoes'];
 
-  constructor() {
+  constructor(private pacienteService: PacienteService, private router: Router) {
   }
 
   ngOnInit() {
+    this.listar();
+  }
+
+  listar(): void {
+    this.pacienteService.listar()
+      .subscribe(pacientes => {
+        this.pacientes = pacientes;
+      });
   }
 
   editar({id}: Paciente): void {
-    console.log(id);
+    this.router.navigate(['editar', id]);
   }
 
   remover({id}: Paciente): void {
-    console.log(id);
+    this.pacienteService.remover(id).subscribe(() => this.listar());
   }
 
 }
