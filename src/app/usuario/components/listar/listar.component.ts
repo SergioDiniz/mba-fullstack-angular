@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Usuario} from '../../model/usuario';
 
 @Component({
   selector: 'app-listar',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListarComponent implements OnInit {
 
-  constructor() { }
+  public usuarios: Usuario[];
+  colunas: string[] = ['login', 'password'];
+
+  constructor() {
+  }
 
   ngOnInit() {
+  }
+
+  editar({id}: Usuario): void {
+    console.log(id);
+  }
+
+  remover({id}: Usuario): void {
+    console.log(id);
   }
 
 }
