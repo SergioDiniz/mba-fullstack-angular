@@ -13,9 +13,11 @@ import { CorDirective } from './cor.directive';
 import { MultiplicarPipe } from './multiplicar.pipe';
 import { ParesPipe } from './pares.pipe';
 import { FiltroPipe } from './filtro.pipe';
+import { MascaraPipe } from './mascara.pipe';
+import { FooterComponent } from './directive/footer/footer.component';
 
 @NgModule({
-  declarations: [CorDirective, MultiplicarPipe, ParesPipe, FiltroPipe],
+  declarations: [CorDirective, MultiplicarPipe, ParesPipe, FiltroPipe, MascaraPipe, FooterComponent],
   imports: [
     CommonModule,
     MatToolbarModule,
@@ -40,7 +42,9 @@ import { FiltroPipe } from './filtro.pipe';
     CorDirective,
     MultiplicarPipe,
     ParesPipe,
-    FiltroPipe
+    FiltroPipe,
+    MascaraPipe,
+    FooterComponent
   ]
 })
 export class SharedModule { }

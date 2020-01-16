@@ -7,6 +7,7 @@ import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MedicoModule} from './medico/medico.module';
 import {PacienteModule} from './paciente/paciente.module';
+import {SharedModule} from "./shared/shared.module";
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {PacienteModule} from './paciente/paciente.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MedicoModule
+    MedicoModule,
+    SharedModule
   ],
   bootstrap: [AppComponent]
 })
