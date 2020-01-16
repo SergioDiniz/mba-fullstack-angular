@@ -1,65 +1,66 @@
-<mat-toolbar>
-  <mat-toolbar-row>
-    Lista de médicos
+<app-ng-content-menu>
 
-    <button mat-icon-button color="primary" routerLink="novo">
-      <mat-icon matTooltip="Cadastrar">add</mat-icon>
-    </button>
+  <div header>Lista de médicos</div>
+
+  <div menu>
     <div>
-      <button mat-raised-button routerLink="pacientes">
+      <button mat-flat-button color="primary" routerLink="novo">
+        Novo médico
+        <mat-icon matTooltip="Cadastrar">add</mat-icon>
+      </button>
+    </div>
+    <div>
+      <button mat-flat-button routerLink="pacientes">
         pacientes
       </button>
-      <button mat-raised-button routerLink="usuarios">
+    </div>
+    <div>
+      <button mat-flat-button routerLink="usuarios">
         usuarios
       </button>
     </div>
+  </div>
 
-  </mat-toolbar-row>
-</mat-toolbar>
+  <div conteudo>
+    <table mat-table [dataSource]="medicos" class="mat-elevation-z8">
 
+      <ng-container matColumnDef="nome">
+        <th mat-header-cell *matHeaderCellDef> nome</th>
+        <td mat-cell *matCellDef="let medico"> {{ medico.nome }} </td>
+      </ng-container>
 
-<!--<app-diretiva-exemplo></app-diretiva-exemplo>-->
-<!--<app-pipe-exemplo [medicos]="medicos"></app-pipe-exemplo>-->
-<!--<br>-->
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> email</th>
+        <td mat-cell *matCellDef="let medico"> {{ medico.email }} </td>
+      </ng-container>
 
+      <ng-container matColumnDef="crm">
+        <th mat-header-cell *matHeaderCellDef> crm</th>
+        <td mat-cell *matCellDef="let medico"> {{ medico.crm }} </td>
+      </ng-container>
 
-<div class="content">
-  <table mat-table [dataSource]="medicos" class="mat-elevation-z8">
+      <ng-container matColumnDef="acoes">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let medico">
+          <div class="acoes">
+            <button color="warn" mat-flat-button (click)="remover(medico)">
+              Remover
+            </button>
 
-    <ng-container matColumnDef="nome">
-      <th mat-header-cell *matHeaderCellDef> nome </th>
-      <td mat-cell *matCellDef="let medico"> {{ medico.nome }} </td>
-    </ng-container>
+            <button color="primary" mat-flat-button (click)="editar(medico)">
+              Editar
+            </button>
+          </div>
+        </td>
+      </ng-container>
 
-    <ng-container matColumnDef="email">
-      <th mat-header-cell *matHeaderCellDef> email </th>
-      <td mat-cell *matCellDef="let medico"> {{ medico.email }} </td>
-    </ng-container>
+      <tr mat-header-row *matHeaderRowDef="colunas"></tr>
+      <tr mat-row *matRowDef="let row; columns: colunas;"></tr>
+    </table>
+  </div>
 
-    <ng-container matColumnDef="crm">
-      <th mat-header-cell *matHeaderCellDef> crm </th>
-      <td mat-cell *matCellDef="let medico"> {{ medico.crm }} </td>
-    </ng-container>
+</app-ng-content-menu>
 
-    <ng-container matColumnDef="acoes">
-      <th mat-header-cell *matHeaderCellDef>  </th>
-      <td mat-cell *matCellDef="let medico">
-        <div class="acoes">
-          <button color="warn" mat-flat-button (click)="remover(medico)">
-            Remover
-          </button>
-
-          <button color="primary" mat-flat-button (click)="editar(medico)">
-            Editar
-          </button>
-        </div>
-      </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="colunas"></tr>
-    <tr mat-row *matRowDef="let row; columns: colunas;"></tr>
-  </table>
-</div>
 
 
 

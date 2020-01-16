@@ -15,9 +15,10 @@ import { ParesPipe } from './pares.pipe';
 import { FiltroPipe } from './filtro.pipe';
 import { MascaraPipe } from './mascara.pipe';
 import { FooterComponent } from './directive/footer/footer.component';
+import { NgContentMenuComponent } from './ng-content/ng-content-menu/ng-content-menu.component';
 
 @NgModule({
-  declarations: [CorDirective, MultiplicarPipe, ParesPipe, FiltroPipe, MascaraPipe, FooterComponent],
+  declarations: [CorDirective, MultiplicarPipe, ParesPipe, FiltroPipe, MascaraPipe, FooterComponent, NgContentMenuComponent],
   imports: [
     CommonModule,
     MatToolbarModule,
@@ -44,7 +45,8 @@ import { FooterComponent } from './directive/footer/footer.component';
     ParesPipe,
     FiltroPipe,
     MascaraPipe,
-    FooterComponent
+    FooterComponent,
+    NgContentMenuComponent
   ]
 })
 export class SharedModule { }
