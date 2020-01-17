@@ -4,7 +4,7 @@ import { ListarComponent } from './components/listar/listar.component';
 import {PacienteRoutingModule} from './paciente-routing.module';
 import {SharedModule} from '../shared/shared.module';
 import { EditarComponent } from './components/editar/editar.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 
