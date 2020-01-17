@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {Paciente} from "../../model/paciente";
-import { PacienteService } from "../../service/paciente.service";
-import {Router} from "@angular/router";
+import {Paciente} from '../../model/paciente';
+import { PacienteService } from '../../service/paciente.service';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -28,7 +28,7 @@ export class ListarComponent implements OnInit {
   }
 
   editar({id}: Paciente): void {
-    this.router.navigate(['editar', id]);
+    this.router.navigate(['/pacientes/editar', id]);
   }
 
   remover({id}: Paciente): void {
