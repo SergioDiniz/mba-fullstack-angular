@@ -33,7 +33,9 @@
              matInput
              placeholder="Telefone"
              formControlName="telefone"
-             name="telefone">
+             name="telefone"
+             maxlength="15"
+             appMascara>
     </mat-form-field>
 
     <mat-form-field>
@@ -42,6 +44,16 @@
              placeholder="Email"
              formControlName="email"
              name="email">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input type="text"
+             matInput
+             placeholder="CEP"
+             formControlName="cep"
+             name="cep"
+             maxlength="9"
+             appMascara>
     </mat-form-field>
 
     <div class="action">

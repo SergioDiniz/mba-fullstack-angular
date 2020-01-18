@@ -16,7 +16,7 @@ import { FiltroPipe } from './filtro.pipe';
 import { MascaraPipe } from './mascara.pipe';
 import { FooterComponent } from './directive/footer/footer.component';
 import { NgContentMenuComponent } from './ng-content/ng-content-menu/ng-content-menu.component';
-import { MascaraDirective } from './directive/cpf-mascara/mascara.directive';
+import { MascaraDirective } from './directive/mascara/mascara.directive';
 
 @NgModule({
   declarations: [CorDirective, MultiplicarPipe, ParesPipe, FiltroPipe, MascaraPipe, FooterComponent, NgContentMenuComponent, MascaraDirective],

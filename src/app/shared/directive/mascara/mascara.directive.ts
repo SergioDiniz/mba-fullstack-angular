@@ -17,8 +17,6 @@ export class MascaraDirective {
   }
 
   @HostListener('keyup', ['$event']) onKeyUp(event: KeyboardEvent) {
-    console.log(this.el)
-    console.log(this.el.nativeElement.name)
     // tslint:disable-next-line:triple-equals
     if (event.key == 'Enter') {
       this.onPressEnter.emit();
