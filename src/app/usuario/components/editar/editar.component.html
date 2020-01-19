@@ -1,0 +1,45 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <button mat-icon-button matTooltip="Voltar" (click)="voltar()">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    {{ titulo }}
+  </mat-toolbar-row>
+</mat-toolbar>
+
+
+<div class="edit">
+  <form (ngSubmit)="enviar(f)" #f="ngForm" class="mat-elevation-z3">
+    <mat-form-field>
+      <input type="text"
+             matInput
+             placeholder="Login"
+             name="login"
+             required
+             [(ngModel)]="usuario.login">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="text"
+             matInput
+             placeholder="Senha"
+             name="password"
+             required
+             [(ngModel)]="usuario.password">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="text"
+             matInput
+             placeholder="Confirmar Senha"
+             name="confirm-password"
+             [(ngModel)]="confirmPassword"
+             required
+             appValidarsenha="password">
+    </mat-form-field>
+
+    <div class="action">
+      <button mat-raised-button type="submit" color="primary">
+        Enviar
+      </button>
+    </div>
+  </form>
+</div>

@@ -17,9 +17,10 @@ import { MascaraPipe } from './mascara.pipe';
 import { FooterComponent } from './directive/footer/footer.component';
 import { NgContentMenuComponent } from './ng-content/ng-content-menu/ng-content-menu.component';
 import { MascaraDirective } from './directive/mascara/mascara.directive';
+import { ValidarsenhaDirective } from './directive/validarsenha/validarsenha.directive';
 
 @NgModule({
-  declarations: [CorDirective, MultiplicarPipe, ParesPipe, FiltroPipe, MascaraPipe, FooterComponent, NgContentMenuComponent, MascaraDirective],
+  declarations: [CorDirective, MultiplicarPipe, ParesPipe, FiltroPipe, MascaraPipe, FooterComponent, NgContentMenuComponent, MascaraDirective, ValidarsenhaDirective],
   imports: [
     CommonModule,
     MatToolbarModule,
@@ -48,7 +49,8 @@ import { MascaraDirective } from './directive/mascara/mascara.directive';
     MascaraPipe,
     FooterComponent,
     NgContentMenuComponent,
-    MascaraDirective
+    MascaraDirective,
+    ValidarsenhaDirective
   ]
 })
 export class SharedModule { }

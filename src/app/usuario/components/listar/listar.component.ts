@@ -28,7 +28,7 @@ export class ListarComponent implements OnInit {
   }
 
   editar({id}: Usuario): void {
-    this.router.navigate(['editar', id]);
+    this.router.navigate(['usuarios/editar', id]);
   }
 
   remover({id}: Usuario): void {
