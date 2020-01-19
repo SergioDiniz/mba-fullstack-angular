@@ -27,10 +27,13 @@ export class EditarComponent implements OnInit {
   }
 
   enviar(form): void {
-    console.log(form)
-    if (form.form.valid) {
-      alert('Formlario valido.');
+    if (!form.form.valid) {
+      alert('Formulario invalido.');
+      return;
     }
+
+    alert('Formulario valido.');
+
     console.log(this.usuario);
   }
 
